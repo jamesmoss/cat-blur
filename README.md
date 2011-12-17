@@ -1,5 +1,7 @@
 # cat-blur
 
+Demo available at http://jamesmoss.co.uk/cat-blur/
+
 Simulating a blur effect using javascript to fade between sharp and blurred copies of a single image.
 
 Move your mouse to the right in the browser window to increase blur; left to decrease.
