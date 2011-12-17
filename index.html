@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script class="jsbin" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<meta charset=utf-8 />
+<title>JS Bin</title>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+  article, aside, figure, footer, header, hgroup, 
+  menu, nav, section { display: block; }
+  
+  #container {
+  	position: relative;
+  }
+  
+  #container > div {
+  	position: absolute;
+  	width: 800px;
+  	height: 600px;
+  	background-position: center center;
+  	background-repeat: no-repeat;
+  }
+  
+  #normal {
+  	background-image: url(cat.png);
+  	z-index: 2;
+  }
+  
+  #blur {
+  	background-image: url(cat-blur.png);
+  	z-index: 1;
+  }
+  
+</style>
+</head>
+<body>
+  <div id="container">
+  	<div id="normal"></div>
+  	<div id="blur"></div>
+  </div>
+  <script type="text/javascript">
+  $(function(){
+  	var normal = $('#normal'),
+  		blur   = $('#blur'),
+ 		pageWidth = $(window).width();
+  		
+  	$(window).mousemove(function(e){
+  		var percent = (e.pageX / pageWidth);	
+  	   	normal.css({ opacity: 1-percent });
+  	   	blur.css({ opacity: percent });
+  	});
+  });
+  </script>
+</body>
+</html>
